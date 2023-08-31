@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>
+        {{exercice?.titre}}
+    </h1>
+    <div class="containerExplication">
+        <img class="containerExplication__image" src={{exercice?.image}}>
+        <div class="containerExplication__text">
+            <h3 (click)="goToPage(exercice?.subTitle ?? '')">{{exercice?.subTitle}}</h3>
+            <p>{{exercice?.description}}</p>
+        </div>
+    </div>
+    <div>
+        <h2>Comment faire le curl à la barre ? ({{nombreEtapes}})</h2>
+        <mat-vertical-stepper color="warn">
+            <mat-step *ngFor="let etape of etapes" label="{{etape.etape}}"></mat-step>
+        </mat-vertical-stepper>
+    </div>
+
+    <div>
+        <h2>Conseils pour le curl à la barre </h2>
+
+        <div class="containerConseil">
+            <div class="containerConseil__text">
+                <p>L’utilisation d’une charge trop importante est à l’origine de nombreuses erreurs. Il est donc
+                    impératif que vous utilisiez un poids que vous pouvez réellement contrôler. Il est beaucoup plus
+                    productif de faire du curl avec une barre 5 kg trop légère que de faire du curl avec une barre 5 kg
+                    trop lourde. Ne laissez pas votre ego vous convaincre du contraire.</p>
+                <p>Maintenez une colonne vertébrale neutre. Les hanches restent immobiles, le torse est droit et le dos
+                    doit rester vertical. Les abdominaux doivent être contractés à tout moment. Il s’agit d’une flexion
+                    de biceps, ce qui signifie que vous êtes censé soulever la barre avec vos biceps, et non avec
+                    l’ensemble de votre corps !</p>
+                <p>Veillez à ce que vos genoux restent légèrement fléchis à tout moment. Ne les tendez pas pour générer
+                    un mouvement de jambe. De même, ne vous penchez pas vers le bas pour obtenir un avantage
+                    biomécanique en vous plaçant partiellement sous la barre.</p>
+                <p>Utilisez une barre d’haltères EZ-Curl pour éviter de forcer sur le poignet, comme cela pourrait se
+                    produire avec une barre droite. La conception de la barre EZ-Curl permet différentes positions
+                    ergonomiques du poignet.</p>
+                <p>Ajustez la largeur des poignées pour faire travailler les biceps sous un angle différent. Une prise
+                    large permet de se concentrer sur la partie interne du biceps. Une prise étroite cible la partie
+                    externe du biceps.</p>
+            </div>
+            <img class="containerConseil__image"
+                src="https://www.docteur-fitness.com/wp-content/uploads/2000/09/comparatif-bonne-mauvaise-position-dos-curl-biceps-debout.gif">
+        </div>
+
+    </div>
+</div>

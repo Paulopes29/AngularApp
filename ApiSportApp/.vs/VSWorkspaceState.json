@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ApiSportApp",
+    "\\ApiSportApp\\Controllers",
+    "\\Models",
+    "\\Models\\Migrations"
+  ],
+  "SelectedNode": "\\ApiSportApp\\Controllers\\ExerciceController.cs",
+  "PreviewInSolutionExplorer": false
+}

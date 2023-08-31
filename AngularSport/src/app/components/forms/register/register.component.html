@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>
+        Création du compte
+    </h1>
+    <form #RegisterForm="ngForm" (ngSubmit)="SaveData(RegisterForm.value)">
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Nom utilisateur</mat-label>
+            <input ngModel name="nomUtilisateur" matInput placeholder="nom de l'utilisateur">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Email</mat-label>
+            <input ngModel name="email" matInput placeholder="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-Width">
+            <mat-label>Mot de passe</mat-label>
+            <input ngModel name="password" matInput [type]="hide ? 'password' : 'text'">
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-form-field class="full-Width">
+            <mat-label>Valider mot de passe</mat-label>
+            <input ngModel name="passwordValidation" matInput [type]="hideValidation ? 'password' : 'text'">
+            <button type="button" mat-icon-button matSuffix (click)="hideValidation = !hideValidation"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideValidation">
+                <mat-icon>{{hideValidation ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+        <mat-checkbox ngModel name="IsAdmin">Compte Admin</mat-checkbox>
+        <br>
+        <button mat-raised-button color="warn">Créer compte</button>
+    </form>
+</div>

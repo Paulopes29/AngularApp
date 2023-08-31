@@ -1,0 +1,112 @@
+$black: #333;
+$white: #eee;
+$color-1: #00BCD4;
+$label-z: 200;
+$svg-z: 100;
+
+.muscle-groups {
+    h2 {
+        margin: 0 0 .5rem;
+        font-size: .8rem;
+        letter-spacing: -.03em;
+        text-transform: uppercase;
+        margin-left: 7px;
+        padding-top: 5px;
+    }
+
+    label {
+        width: 100px;
+        display: block;
+        margin-bottom: .5rem;
+        cursor: pointer;
+        font-size: .8rem;
+        opacity: .5;
+        position: relative;
+        z-index: $label-z;
+        padding-left: 8px;
+        margin-left: 11px;
+
+        &:hover,
+        &.hover {
+            opacity: 1;
+            border-color: rgba($black, .75);
+        }
+    }
+
+    input:checked+label {
+        opacity: 1;
+        font-weight: bold;
+        color: #f44336;
+    }
+
+    svg {
+        position: absolute;
+        bottom: 5rem;
+        height: 450px;
+        z-index: $svg-z;
+        top: 13rem;
+    }
+
+    svg g[id] path {
+        opacity: .2;
+        transition: opacity .25s ease-in-out;
+    }
+
+    svg g g[id]:hover path {
+        cursor: pointer;
+        opacity: .5;
+        fill: #f44336 !important;
+
+        .nomMuscle {
+            visibility: visible;
+        }
+
+    }
+
+    .muscles-helper {
+        display: none;
+    }
+
+    .muscles-helper .left {
+        display: none;
+    }
+
+
+    $groups: obliques, abs, quads, biceps, adductors, pectorals, deltoids, hamstrings, quads, forearms, calves, triceps, glutes, lats, trapezius;
+
+    @each $muscle in $groups {
+        $upper: to-upper-case(str-slice($muscle, 1, 1))+str-slice($muscle, 2);
+
+        label[for="#{$muscle}"]:hover~svg ##{$upper} path {
+            opacity: .75;
+        }
+
+        .#{$muscle}:checked~svg ##{$upper} path {
+            opacity: .8;
+            fill: #f44336 !important;
+        }
+    }
+
+}
+
+@media (min-width: 0px) {
+    svg {
+        height: 400px;
+        /*TODO voir comment fonctionne @media pour reduire la taille du svg quand l'ecran est plus petit
+        pour qu'on ne soit pas obligé de scroll
+        */
+    }
+}
+
+h1 {
+
+    margin: 25px;
+    margin-bottom: 25px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-left: 8px solid #f44336 !important;
+    padding: 0.01em 16px;
+    background-color: #444f59 !important;
+    line-height: 3em;
+    color: white;
+}

@@ -1,0 +1,40 @@
+.card {
+    max-width: 400px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #373b40;
+    color: white;
+    box-shadow: #f44336 0px 20px 30px -10px;
+    flex-shrink: 0; // sert a bloquer que la taille de la card soit plus petite lorsq'uon retreci la page
+}
+
+.card .subTItle {
+    color: #f44336;
+    text-transform: uppercase;
+}
+
+.cardHeader-image {
+    background-image: url('https://i.pinimg.com/originals/45/11/b6/4511b60646b4aede48f55a2159ce12eb.jpg');
+    background-size: cover;
+}
+
+.cardContent {
+    padding-top: 15px;
+    width: fit-content;
+}
+
+.cardHeader {
+    padding-bottom: 10px;
+}
+
+.cardActions {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.cardContent p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}

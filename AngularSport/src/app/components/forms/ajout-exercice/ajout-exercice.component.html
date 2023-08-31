@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>
+        Ajout d'un exercice
+    </h1>
+    <form #ExerciceForm="ngForm" (ngSubmit)="SaveData(ExerciceForm.value,ExerciceForm)">
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Nom exercice</mat-label>
+            <input ngModel name="titre" matInput placeholder="nom de l'exercice">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Description</mat-label>
+            <input ngModel name="Description" matInput placeholder="description de l'exercice">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Lien image</mat-label>
+            <input ngModel name="image" matInput placeholder="lien de l'exercice">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="full-Width">
+            <mat-label>Catégorie</mat-label>
+            <mat-select ngModel name="subTitle">
+                <mat-option *ngFor="let categorie of categories"
+                    value="{{categorie.libelle}}">{{categorie.libelle}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="warn">Sauvegarder exercice</button>
+    </form>
+</div>

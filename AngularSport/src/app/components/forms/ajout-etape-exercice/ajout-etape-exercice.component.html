@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>
+        Ajout étape exercice
+    </h1>
+    <form #EtapeForm="ngForm" (ngSubmit)="SaveData(EtapeForm.value,EtapeForm)">
+
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Description étape</mat-label>
+            <input ngModel name="Etape" matInput placeholder="description de l'étape">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="full-Width">
+            <mat-label>Position</mat-label>
+            <input type="number" ngModel name="Ordre" matInput placeholder="position">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-Width">
+            <mat-label>Exercice concerné</mat-label>
+            <mat-select [(value)]="selected" ngModel name="ExerciceId">
+                <mat-option *ngFor="let exo of exercices" value={{exo.id}}>{{exo.titre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="warn">Sauvegarder étape</button>
+    </form>
+</div>

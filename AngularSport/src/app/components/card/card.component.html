@@ -1,0 +1,16 @@
+<mat-card class="card">
+    <mat-card-header class="cardHeader">
+        <div mat-card-avatar class="cardHeader-image"></div>
+        <mat-card-title> {{exercice.titre}} </mat-card-title>
+        <mat-card-subtitle class="subTItle">{{exercice.subTitle}} {{ bodyPart}} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{exercice.image}} alt={{exercice.titre}}>
+    <mat-card-content class="cardContent">
+        <p>
+            {{exercice.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions class="cardActions">
+        <button (click)="ExercicePresentation()" mat-button mat-raised-button color="warn">Details</button>
+    </mat-card-actions>
+</mat-card>
