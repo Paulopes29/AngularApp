@@ -3,7 +3,7 @@
 # API
 j'ai crée une api en c# avec codefirst et j'ai utilisé la base de données sqlite
 
-#Angular App
+# Angular App
 
 J'ai crée un site de sport 
 on peut creer des comptes, se login/log out
